@@ -11,7 +11,6 @@ import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const [formData, setFormData] = useState({ title: "", description: "" });
-
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -29,6 +28,7 @@ export default function Home() {
   const fetchTodos = async () => {
     const response = await axios.get("/api");
     setTodoData(response.data.todos);
+    
   };
 
   const deleteTodo = async (id) => {
@@ -41,6 +41,16 @@ export default function Home() {
     fetchTodos();
   }
 
+  const completeTodo = async (id) => {
+const response  = await axios.put("/api",{},{
+  params : {
+    mongoId : id
+  }
+});
+toast.success(response.data.msg);
+fetchTodos();
+  }
+
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -50,7 +60,7 @@ export default function Home() {
       <Header />
     <div className="flex-grow">
       <CreateTask
-      className="flex-grow"
+      className=""
         formData={formData}
         setFormData={setFormData}
         onSubmitHandler={onSubmitHandler}
@@ -60,6 +70,8 @@ export default function Home() {
         setFormData={setFormData}
         todoData={todoData}
         deleteTodo={deleteTodo}
+        completeTodo={completeTodo}
+        
       />
       </div>
       <Footer className="" />

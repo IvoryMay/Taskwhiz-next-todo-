@@ -9,7 +9,7 @@ const CreateTask = ({formData, setFormData, onSubmitHandler}) => {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
   return (
-    <div className='mb-8 font-serif px-4 md:px-8  lg:px-10'>
+    <div className='mb-8 font-serif w-[60%] mx-auto '>
       <form
       onSubmit={onSubmitHandler}
       className='flex flex-col gap-4 '>
