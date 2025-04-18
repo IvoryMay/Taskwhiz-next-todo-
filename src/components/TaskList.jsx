@@ -5,8 +5,8 @@ import NoTask from './NoTask'
 const TaskList = ({formData, setFormData,todoData,deleteTodo,completeTodo}) => {
   return (
     <div className='font-serif '>
-      <div className="relative max-w-[75%] px-1 sm:px-4 md:mx-auto   ">
-   <table className="w-full text-sm text-left rtl:text-right text-gray-500 rounded-lg overflow-x-auto  ">
+      <div className="relative w-[75%] mx-auto   ">
+   <table className="w-full text-sm text-left rtl:text-right text-gray-500 rounded-lg overflow-hidden ">
     <thead className="text-xs   text-gray-700 uppercase bg-[#aed9e0] ">
       
       <tr className={`${todoData.length === 0 && "hidden"}`}>
