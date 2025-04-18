@@ -1,12 +1,11 @@
 "use client";
 
 import CreateTask from "@/components/CreateTask";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TaskList from "@/components/TaskList";
 import axios from "axios";
 import { mongo } from "mongoose";
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
@@ -55,11 +54,11 @@ fetchTodos();
     fetchTodos();
   }, []);
   return (
-    <div className="min-h-screen flex flex-col  ">
+    <div className=" ">
       
       <Toaster />
       <Header />
-    <div className="flex-grow">
+    <div className="">
       <CreateTask
       className=""
         formData={formData}
@@ -75,7 +74,6 @@ fetchTodos();
         
       />
       </div>
-      <Footer className="" />
     </div>
   );
 }
