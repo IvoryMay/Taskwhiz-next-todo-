@@ -5,6 +5,7 @@ import { FaCss3 } from "react-icons/fa6";
 import { FaJsSquare } from "react-icons/fa";
 import { RiReactjsLine } from "react-icons/ri";
 import { SiNextdotjs } from "react-icons/si";
+import { FaCode } from "react-icons/fa";
 const page = () => {
 
   const mySkills = [
@@ -16,7 +17,7 @@ const page = () => {
   ];
 
   const toolKits = [
-    { tool: "Tailwind CSS", description: "A utility-first CSS framework for fast, custom designs." },
+    { tool: "Tailwind CSS", description: "A utility-first CSS framework for fast, custom designs.", },
     { tool: "Zustand", description: "A lightweight and scalable state management library for React." },
     { tool: "SWR", description: "A React hook library for remote data fetching with caching." },
   ];
@@ -49,13 +50,14 @@ const page = () => {
         
           <div className="mb-4">
           <h3  className="mb-2 font-semibold text-[#6c584c]">Other tool kits</h3>
-          <ul className="pl-3 ">
+          <div className="pl-3 ">
             {toolKits.map((el, index) => (
-              <li key={index} className="text-[#03045e]">
-                {el.tool}
-              </li>
+              <div key={index} className="text-[#03045e] flex gap-2">
+                <div className="text-blue-500"><FaCode /></div>
+                <div className="text-[#184c35]">{el.tool}</div>
+              </div>
             ))}
-          </ul>
+          </div>
           </div>
         
       
